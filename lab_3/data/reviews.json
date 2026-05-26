@@ -1,0 +1,1762 @@
+{
+  "C0001": {
+    "client_id": "C0001",
+    "review_date": "2024-01-15",
+    "rating": 2,
+    "channels": [
+      {
+        "name": "call_center",
+        "interaction_count": 1,
+        "last_used": "2024-01-09"
+      },
+      {
+        "name": "website",
+        "interaction_count": 1,
+        "last_used": "2024-01-13"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 15,
+        "last_used": "2024-01-13"
+      }
+    ],
+    "tags": ["resolved_quickly", "poor_service"]
+  },
+  "C0002": {
+    "client_id": "C0002",
+    "review_date": "2024-01-15",
+    "rating": 1,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 12,
+        "last_used": "2024-01-05"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 9,
+        "last_used": "2024-01-14"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 2,
+        "last_used": "2024-01-07"
+      }
+    ],
+    "tags": ["fast_response", "resolved_quickly"]
+  },
+  "C0003": {
+    "client_id": "C0003",
+    "review_date": "2024-01-15",
+    "rating": 4,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 2,
+        "last_used": "2024-01-13"
+      },
+      {
+        "name": "website",
+        "interaction_count": 15,
+        "last_used": "2024-01-05"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 9,
+        "last_used": "2024-01-09"
+      }
+    ],
+    "tags": "friendly_staff"
+  },
+  "C0004": {
+    "client_id": "C0004",
+    "review_date": "2024-01-15",
+    "rating": 3,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 5,
+        "last_used": "2024-01-12"
+      }
+    ],
+    "tags": ["resolved_quickly", "friendly_staff"]
+  },
+  "C0005": {
+    "client_id": "C0005",
+    "review_date": "2024-01-15",
+    "rating": 2,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 3,
+        "last_used": "2024-01-09"
+      }
+    ],
+    "tags": ["poor_service", "long_wait"]
+  },
+  "C0006": {
+    "client_id": "C0006",
+    "review_date": "2024-01-15",
+    "rating": 5,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 11,
+        "last_used": "2024-01-11"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 4,
+        "last_used": "2024-01-11"
+      }
+    ],
+    "tags": ["fast_response", "poor_service", "resolved_quickly"]
+  },
+  "C0007": {
+    "client_id": "C0007",
+    "review_date": "2024-01-15",
+    "rating": 5,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 14,
+        "last_used": "2024-01-14"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 13,
+        "last_used": "2024-01-11"
+      }
+    ],
+    "tags": "fast_response"
+  },
+  "C0008": {
+    "client_id": "C0008",
+    "review_date": "2024-01-15",
+    "rating": 2,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 15,
+        "last_used": "2024-01-07"
+      }
+    ],
+    "tags": ["long_wait", "fast_response", "resolved_quickly"]
+  },
+  "C0009": {
+    "client_id": "C0009",
+    "review_date": "2024-01-15",
+    "rating": 2,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 3,
+        "last_used": "2024-01-10"
+      }
+    ],
+    "tags": ["friendly_staff", "long_wait", "resolved_quickly"]
+  },
+  "C0010": {
+    "client_id": "C0010",
+    "review_date": "2024-01-15",
+    "rating": 5,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 9,
+        "last_used": "2024-01-12"
+      }
+    ],
+    "tags": ["poor_service", "long_wait"]
+  },
+  "C0011": {
+    "client_id": "C0011",
+    "review_date": "2024-01-15",
+    "rating": 3,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 9,
+        "last_used": "2024-01-09"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 8,
+        "last_used": "2024-01-14"
+      },
+      {
+        "name": "website",
+        "interaction_count": 13,
+        "last_used": "2024-01-09"
+      }
+    ],
+    "tags": ["fast_response", "friendly_staff", "resolved_quickly"]
+  },
+  "C0012": {
+    "client_id": "C0012",
+    "review_date": "2024-01-15",
+    "rating": 4,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 7,
+        "last_used": "2024-01-09"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 15,
+        "last_used": "2024-01-05"
+      }
+    ],
+    "tags": "poor_service"
+  },
+  "C0013": {
+    "client_id": "C0013",
+    "review_date": "2024-01-15",
+    "rating": 3,
+    "channels": [
+      {
+        "name": "call_center",
+        "interaction_count": 9,
+        "last_used": "2024-01-09"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 1,
+        "last_used": "2024-01-14"
+      },
+      {
+        "name": "website",
+        "interaction_count": 11,
+        "last_used": "2024-01-13"
+      }
+    ],
+    "tags": ["friendly_staff", "poor_service", "resolved_quickly"]
+  },
+  "C0014": {
+    "client_id": "C0014",
+    "review_date": "2024-01-15",
+    "rating": 5,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 11,
+        "last_used": "2024-01-10"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 6,
+        "last_used": "2024-01-11"
+      },
+      {
+        "name": "website",
+        "interaction_count": 2,
+        "last_used": "2024-01-05"
+      }
+    ],
+    "tags": "long_wait"
+  },
+  "C0015": {
+    "client_id": "C0015",
+    "review_date": "2024-01-15",
+    "rating": 4,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 15,
+        "last_used": "2024-01-08"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 10,
+        "last_used": "2024-01-12"
+      }
+    ],
+    "tags": "long_wait"
+  },
+  "C0016": {
+    "client_id": "C0016",
+    "review_date": "2024-01-15",
+    "rating": 4,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 6,
+        "last_used": "2024-01-06"
+      },
+      {
+        "name": "website",
+        "interaction_count": 6,
+        "last_used": "2024-01-14"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 14,
+        "last_used": "2024-01-10"
+      }
+    ],
+    "tags": "fast_response"
+  },
+  "C0017": {
+    "client_id": "C0017",
+    "review_date": "2024-01-15",
+    "rating": 5,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 7,
+        "last_used": "2024-01-10"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 3,
+        "last_used": "2024-01-05"
+      }
+    ],
+    "tags": "fast_response"
+  },
+  "C0018": {
+    "client_id": "C0018",
+    "review_date": "2024-01-15",
+    "rating": 3,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 3,
+        "last_used": "2024-01-13"
+      }
+    ],
+    "tags": ["long_wait", "resolved_quickly", "fast_response"]
+  },
+  "C0019": {
+    "client_id": "C0019",
+    "review_date": "2024-01-15",
+    "rating": 3,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 11,
+        "last_used": "2024-01-05"
+      },
+      {
+        "name": "website",
+        "interaction_count": 1,
+        "last_used": "2024-01-14"
+      }
+    ],
+    "tags": "resolved_quickly"
+  },
+  "C0020": {
+    "client_id": "C0020",
+    "review_date": "2024-01-15",
+    "rating": 3,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 6,
+        "last_used": "2024-01-08"
+      }
+    ],
+    "tags": "friendly_staff"
+  },
+  "C0021": {
+    "client_id": "C0021",
+    "review_date": "2024-01-15",
+    "rating": 4,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 6,
+        "last_used": "2024-01-13"
+      },
+      {
+        "name": "website",
+        "interaction_count": 12,
+        "last_used": "2024-01-12"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 1,
+        "last_used": "2024-01-11"
+      }
+    ],
+    "tags": ["fast_response", "friendly_staff", "resolved_quickly"]
+  },
+  "C0022": {
+    "client_id": "C0022",
+    "review_date": "2024-01-15",
+    "rating": 2,
+    "channels": [
+      {
+        "name": "call_center",
+        "interaction_count": 9,
+        "last_used": "2024-01-05"
+      },
+      {
+        "name": "website",
+        "interaction_count": 9,
+        "last_used": "2024-01-12"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 15,
+        "last_used": "2024-01-08"
+      }
+    ],
+    "tags": ["poor_service", "resolved_quickly", "friendly_staff"]
+  },
+  "C0023": {
+    "client_id": "C0023",
+    "review_date": "2024-01-15",
+    "rating": 4,
+    "channels": [
+      {
+        "name": "call_center",
+        "interaction_count": 2,
+        "last_used": "2024-01-12"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 14,
+        "last_used": "2024-01-14"
+      }
+    ],
+    "tags": ["friendly_staff", "fast_response"]
+  },
+  "C0024": {
+    "client_id": "C0024",
+    "review_date": "2024-01-15",
+    "rating": 4,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 3,
+        "last_used": "2024-01-12"
+      }
+    ],
+    "tags": ["friendly_staff", "poor_service"]
+  },
+  "C0025": {
+    "client_id": "C0025",
+    "review_date": "2024-01-15",
+    "rating": 3,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 13,
+        "last_used": "2024-01-08"
+      }
+    ],
+    "tags": "resolved_quickly"
+  },
+  "C0026": {
+    "client_id": "C0026",
+    "review_date": "2024-01-15",
+    "rating": 4,
+    "channels": [
+      {
+        "name": "call_center",
+        "interaction_count": 3,
+        "last_used": "2024-01-09"
+      },
+      {
+        "name": "website",
+        "interaction_count": 12,
+        "last_used": "2024-01-06"
+      }
+    ],
+    "tags": ["friendly_staff", "long_wait"]
+  },
+  "C0027": {
+    "client_id": "C0027",
+    "review_date": "2024-01-15",
+    "rating": 3,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 9,
+        "last_used": "2024-01-07"
+      },
+      {
+        "name": "website",
+        "interaction_count": 11,
+        "last_used": "2024-01-09"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 15,
+        "last_used": "2024-01-10"
+      }
+    ],
+    "tags": ["friendly_staff", "long_wait"]
+  },
+  "C0028": {
+    "client_id": "C0028",
+    "review_date": "2024-01-15",
+    "rating": 5,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 10,
+        "last_used": "2024-01-14"
+      }
+    ],
+    "tags": ["fast_response", "long_wait"]
+  },
+  "C0029": {
+    "client_id": "C0029",
+    "review_date": "2024-01-15",
+    "rating": 3,
+    "channels": [
+      {
+        "name": "call_center",
+        "interaction_count": 11,
+        "last_used": "2024-01-10"
+      }
+    ],
+    "tags": ["poor_service", "long_wait"]
+  },
+  "C0030": {
+    "client_id": "C0030",
+    "review_date": "2024-01-15",
+    "rating": 3,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 14,
+        "last_used": "2024-01-11"
+      }
+    ],
+    "tags": ["resolved_quickly", "fast_response"]
+  },
+  "C0031": {
+    "client_id": "C0031",
+    "review_date": "2024-01-15",
+    "rating": 4,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 11,
+        "last_used": "2024-01-12"
+      }
+    ],
+    "tags": ["friendly_staff", "poor_service", "fast_response"]
+  },
+  "C0032": {
+    "client_id": "C0032",
+    "review_date": "2024-01-15",
+    "rating": 4,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 13,
+        "last_used": "2024-01-11"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 11,
+        "last_used": "2024-01-06"
+      },
+      {
+        "name": "website",
+        "interaction_count": 8,
+        "last_used": "2024-01-08"
+      }
+    ],
+    "tags": ["resolved_quickly", "friendly_staff"]
+  },
+  "C0033": {
+    "client_id": "C0033",
+    "review_date": "2024-01-15",
+    "rating": 4,
+    "channels": [
+      {
+        "name": "call_center",
+        "interaction_count": 7,
+        "last_used": "2024-01-09"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 9,
+        "last_used": "2024-01-13"
+      }
+    ],
+    "tags": ["fast_response", "resolved_quickly"]
+  },
+  "C0034": {
+    "client_id": "C0034",
+    "review_date": "2024-01-15",
+    "rating": 3,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 13,
+        "last_used": "2024-01-12"
+      },
+      {
+        "name": "website",
+        "interaction_count": 10,
+        "last_used": "2024-01-09"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 1,
+        "last_used": "2024-01-05"
+      }
+    ],
+    "tags": ["friendly_staff", "long_wait"]
+  },
+  "C0035": {
+    "client_id": "C0035",
+    "review_date": "2024-01-15",
+    "rating": 2,
+    "channels": [
+      {
+        "name": "call_center",
+        "interaction_count": 1,
+        "last_used": "2024-01-07"
+      }
+    ],
+    "tags": ["friendly_staff", "resolved_quickly"]
+  },
+  "C0036": {
+    "client_id": "C0036",
+    "review_date": "2024-01-15",
+    "rating": 5,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 12,
+        "last_used": "2024-01-12"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 3,
+        "last_used": "2024-01-07"
+      },
+      {
+        "name": "website",
+        "interaction_count": 5,
+        "last_used": "2024-01-08"
+      }
+    ],
+    "tags": ["friendly_staff", "fast_response", "poor_service"]
+  },
+  "C0037": {
+    "client_id": "C0037",
+    "review_date": "2024-01-15",
+    "rating": 5,
+    "channels": [
+      {
+        "name": "call_center",
+        "interaction_count": 10,
+        "last_used": "2024-01-08"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 14,
+        "last_used": "2024-01-07"
+      },
+      {
+        "name": "website",
+        "interaction_count": 13,
+        "last_used": "2024-01-07"
+      }
+    ],
+    "tags": ["long_wait", "fast_response"]
+  },
+  "C0038": {
+    "client_id": "C0038",
+    "review_date": "2024-01-15",
+    "rating": 4,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 7,
+        "last_used": "2024-01-11"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 5,
+        "last_used": "2024-01-10"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 11,
+        "last_used": "2024-01-05"
+      }
+    ],
+    "tags": ["friendly_staff", "fast_response", "resolved_quickly"]
+  },
+  "C0039": {
+    "client_id": "C0039",
+    "review_date": "2024-01-15",
+    "rating": 5,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 7,
+        "last_used": "2024-01-05"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 9,
+        "last_used": "2024-01-13"
+      }
+    ],
+    "tags": ["poor_service", "fast_response", "long_wait"]
+  },
+  "C0040": {
+    "client_id": "C0040",
+    "review_date": "2024-01-15",
+    "rating": 4,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 2,
+        "last_used": "2024-01-09"
+      }
+    ],
+    "tags": "long_wait"
+  },
+  "C0028.1": {
+    "client_id": "C0028",
+    "review_date": "2024-02-14",
+    "rating": 3,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 1,
+        "last_used": "2024-02-07"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 11,
+        "last_used": "2024-02-09"
+      }
+    ],
+    "tags": ["poor_service", "friendly_staff"]
+  },
+  "C0016.1": {
+    "client_id": "C0016",
+    "review_date": "2024-02-14",
+    "rating": 5,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 1,
+        "last_used": "2024-02-12"
+      }
+    ],
+    "tags": ["fast_response", "friendly_staff", "long_wait"]
+  },
+  "C0039.1": {
+    "client_id": "C0039",
+    "review_date": "2024-02-14",
+    "rating": 5,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 12,
+        "last_used": "2024-02-11"
+      }
+    ],
+    "tags": ["fast_response", "resolved_quickly"]
+  },
+  "C0008.1": {
+    "client_id": "C0008",
+    "review_date": "2024-02-14",
+    "rating": 5,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 14,
+        "last_used": "2024-02-09"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 8,
+        "last_used": "2024-02-12"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 8,
+        "last_used": "2024-02-12"
+      }
+    ],
+    "tags": ["poor_service", "friendly_staff"]
+  },
+  "C0037.1": {
+    "client_id": "C0037",
+    "review_date": "2024-02-14",
+    "rating": 5,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 2,
+        "last_used": "2024-02-13"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 8,
+        "last_used": "2024-02-11"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 8,
+        "last_used": "2024-02-10"
+      }
+    ],
+    "tags": ["friendly_staff", "resolved_quickly", "fast_response"]
+  },
+  "C0031.1": {
+    "client_id": "C0031",
+    "review_date": "2024-02-14",
+    "rating": 5,
+    "channels": [
+      {
+        "name": "call_center",
+        "interaction_count": 11,
+        "last_used": "2024-02-12"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 8,
+        "last_used": "2024-02-06"
+      },
+      {
+        "name": "website",
+        "interaction_count": 10,
+        "last_used": "2024-02-12"
+      }
+    ],
+    "tags": ["resolved_quickly", "long_wait"]
+  },
+  "C0023.1": {
+    "client_id": "C0023",
+    "review_date": "2024-02-14",
+    "rating": 1,
+    "channels": [
+      {
+        "name": "call_center",
+        "interaction_count": 4,
+        "last_used": "2024-02-11"
+      }
+    ],
+    "tags": ["fast_response", "long_wait", "friendly_staff"]
+  },
+  "C0010.1": {
+    "client_id": "C0010",
+    "review_date": "2024-02-14",
+    "rating": 1,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 15,
+        "last_used": "2024-02-13"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 2,
+        "last_used": "2024-02-10"
+      },
+      {
+        "name": "website",
+        "interaction_count": 7,
+        "last_used": "2024-02-13"
+      }
+    ],
+    "tags": "long_wait"
+  },
+  "C0027.1": {
+    "client_id": "C0027",
+    "review_date": "2024-02-14",
+    "rating": 2,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 4,
+        "last_used": "2024-02-05"
+      }
+    ],
+    "tags": ["long_wait", "fast_response"]
+  },
+  "C0040.1": {
+    "client_id": "C0040",
+    "review_date": "2024-02-14",
+    "rating": 4,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 8,
+        "last_used": "2024-02-11"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 10,
+        "last_used": "2024-02-12"
+      }
+    ],
+    "tags": ["resolved_quickly", "fast_response", "long_wait"]
+  },
+  "C0026.1": {
+    "client_id": "C0026",
+    "review_date": "2024-02-14",
+    "rating": 5,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 1,
+        "last_used": "2024-02-13"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 14,
+        "last_used": "2024-02-10"
+      }
+    ],
+    "tags": ["poor_service", "resolved_quickly"]
+  },
+  "C0011.1": {
+    "client_id": "C0011",
+    "review_date": "2024-02-14",
+    "rating": 4,
+    "channels": [
+      {
+        "name": "call_center",
+        "interaction_count": 14,
+        "last_used": "2024-02-11"
+      },
+      {
+        "name": "website",
+        "interaction_count": 5,
+        "last_used": "2024-02-09"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 2,
+        "last_used": "2024-02-05"
+      }
+    ],
+    "tags": ["resolved_quickly", "friendly_staff", "long_wait"]
+  },
+  "C0032.1": {
+    "client_id": "C0032",
+    "review_date": "2024-02-14",
+    "rating": 3,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 14,
+        "last_used": "2024-02-08"
+      }
+    ],
+    "tags": ["fast_response", "resolved_quickly"]
+  },
+  "C0034.1": {
+    "client_id": "C0034",
+    "review_date": "2024-02-14",
+    "rating": 5,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 15,
+        "last_used": "2024-02-05"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 10,
+        "last_used": "2024-02-08"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 3,
+        "last_used": "2024-02-13"
+      }
+    ],
+    "tags": ["resolved_quickly", "poor_service"]
+  },
+  "C0001.1": {
+    "client_id": "C0001",
+    "review_date": "2024-02-14",
+    "rating": 2,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 11,
+        "last_used": "2024-02-08"
+      }
+    ],
+    "tags": ["fast_response", "resolved_quickly"]
+  },
+  "C0022.1": {
+    "client_id": "C0022",
+    "review_date": "2024-02-14",
+    "rating": 2,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 1,
+        "last_used": "2024-02-05"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 2,
+        "last_used": "2024-02-11"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 1,
+        "last_used": "2024-02-13"
+      }
+    ],
+    "tags": "long_wait"
+  },
+  "C0015.1": {
+    "client_id": "C0015",
+    "review_date": "2024-02-14",
+    "rating": 5,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 6,
+        "last_used": "2024-02-12"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 14,
+        "last_used": "2024-02-09"
+      }
+    ],
+    "tags": "fast_response"
+  },
+  "C0004.1": {
+    "client_id": "C0004",
+    "review_date": "2024-02-14",
+    "rating": 5,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 15,
+        "last_used": "2024-02-07"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 14,
+        "last_used": "2024-02-04"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 3,
+        "last_used": "2024-02-07"
+      }
+    ],
+    "tags": "poor_service"
+  },
+  "C0007.1": {
+    "client_id": "C0007",
+    "review_date": "2024-02-14",
+    "rating": 2,
+    "channels": [
+      {
+        "name": "call_center",
+        "interaction_count": 2,
+        "last_used": "2024-02-05"
+      }
+    ],
+    "tags": ["long_wait", "fast_response", "poor_service"]
+  },
+  "C0029.1": {
+    "client_id": "C0029",
+    "review_date": "2024-02-14",
+    "rating": 2,
+    "channels": [
+      {
+        "name": "call_center",
+        "interaction_count": 13,
+        "last_used": "2024-02-07"
+      }
+    ],
+    "tags": ["fast_response", "friendly_staff"]
+  },
+  "C0033.1": {
+    "client_id": "C0033",
+    "review_date": "2024-02-14",
+    "rating": 5,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 12,
+        "last_used": "2024-02-06"
+      }
+    ],
+    "tags": ["long_wait", "friendly_staff"]
+  },
+  "C0036.1": {
+    "client_id": "C0036",
+    "review_date": "2024-02-14",
+    "rating": 4,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 7,
+        "last_used": "2024-02-05"
+      }
+    ],
+    "tags": ["friendly_staff", "resolved_quickly", "long_wait"]
+  },
+  "C0003.1": {
+    "client_id": "C0003",
+    "review_date": "2024-02-14",
+    "rating": 3,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 5,
+        "last_used": "2024-02-13"
+      },
+      {
+        "name": "website",
+        "interaction_count": 1,
+        "last_used": "2024-02-04"
+      }
+    ],
+    "tags": "long_wait"
+  },
+  "C0013.1": {
+    "client_id": "C0013",
+    "review_date": "2024-02-14",
+    "rating": 2,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 12,
+        "last_used": "2024-02-07"
+      },
+      {
+        "name": "website",
+        "interaction_count": 9,
+        "last_used": "2024-02-06"
+      }
+    ],
+    "tags": ["long_wait", "resolved_quickly"]
+  },
+  "C0035.1": {
+    "client_id": "C0035",
+    "review_date": "2024-02-14",
+    "rating": 5,
+    "channels": [
+      {
+        "name": "call_center",
+        "interaction_count": 8,
+        "last_used": "2024-02-09"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 6,
+        "last_used": "2024-02-10"
+      },
+      {
+        "name": "website",
+        "interaction_count": 13,
+        "last_used": "2024-02-06"
+      }
+    ],
+    "tags": ["fast_response", "resolved_quickly", "long_wait"]
+  },
+  "C0025.1": {
+    "client_id": "C0025",
+    "review_date": "2024-02-14",
+    "rating": 4,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 7,
+        "last_used": "2024-02-07"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 12,
+        "last_used": "2024-02-13"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 15,
+        "last_used": "2024-02-10"
+      }
+    ],
+    "tags": ["long_wait", "fast_response", "poor_service"]
+  },
+  "C0019.1": {
+    "client_id": "C0019",
+    "review_date": "2024-02-14",
+    "rating": 4,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 9,
+        "last_used": "2024-02-12"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 1,
+        "last_used": "2024-02-10"
+      }
+    ],
+    "tags": ["poor_service", "long_wait"]
+  },
+  "C0014.1": {
+    "client_id": "C0014",
+    "review_date": "2024-02-14",
+    "rating": 5,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 14,
+        "last_used": "2024-02-04"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 7,
+        "last_used": "2024-02-04"
+      }
+    ],
+    "tags": "fast_response"
+  },
+  "C0018.1": {
+    "client_id": "C0018",
+    "review_date": "2024-02-14",
+    "rating": 4,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 8,
+        "last_used": "2024-02-04"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 14,
+        "last_used": "2024-02-06"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 5,
+        "last_used": "2024-02-04"
+      }
+    ],
+    "tags": ["resolved_quickly", "long_wait", "poor_service"]
+  },
+  "C0009.1": {
+    "client_id": "C0009",
+    "review_date": "2024-02-14",
+    "rating": 4,
+    "channels": [
+      {
+        "name": "call_center",
+        "interaction_count": 8,
+        "last_used": "2024-02-04"
+      }
+    ],
+    "tags": ["resolved_quickly", "long_wait"]
+  },
+  "C0035.2": {
+    "client_id": "C0035",
+    "review_date": "2024-03-20",
+    "rating": 3,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 2,
+        "last_used": "2024-03-14"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 2,
+        "last_used": "2024-03-11"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 14,
+        "last_used": "2024-03-11"
+      }
+    ],
+    "tags": "fast_response"
+  },
+  "C0001.2": {
+    "client_id": "C0001",
+    "review_date": "2024-03-20",
+    "rating": 2,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 2,
+        "last_used": "2024-03-19"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 8,
+        "last_used": "2024-03-18"
+      }
+    ],
+    "tags": "long_wait"
+  },
+  "C0005.1": {
+    "client_id": "C0005",
+    "review_date": "2024-03-20",
+    "rating": 2,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 6,
+        "last_used": "2024-03-13"
+      },
+      {
+        "name": "website",
+        "interaction_count": 8,
+        "last_used": "2024-03-19"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 12,
+        "last_used": "2024-03-12"
+      }
+    ],
+    "tags": ["resolved_quickly", "friendly_staff", "fast_response"]
+  },
+  "C0017.1": {
+    "client_id": "C0017",
+    "review_date": "2024-03-20",
+    "rating": 4,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 6,
+        "last_used": "2024-03-13"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 12,
+        "last_used": "2024-03-12"
+      }
+    ],
+    "tags": "resolved_quickly"
+  },
+  "C0039.2": {
+    "client_id": "C0039",
+    "review_date": "2024-03-20",
+    "rating": 4,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 8,
+        "last_used": "2024-03-18"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 2,
+        "last_used": "2024-03-13"
+      },
+      {
+        "name": "website",
+        "interaction_count": 10,
+        "last_used": "2024-03-14"
+      }
+    ],
+    "tags": "resolved_quickly"
+  },
+  "C0024.1": {
+    "client_id": "C0024",
+    "review_date": "2024-03-20",
+    "rating": 5,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 6,
+        "last_used": "2024-03-19"
+      }
+    ],
+    "tags": ["fast_response", "long_wait"]
+  },
+  "C0033.2": {
+    "client_id": "C0033",
+    "review_date": "2024-03-20",
+    "rating": 1,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 3,
+        "last_used": "2024-03-12"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 5,
+        "last_used": "2024-03-17"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 13,
+        "last_used": "2024-03-17"
+      }
+    ],
+    "tags": "poor_service"
+  },
+  "C0018.2": {
+    "client_id": "C0018",
+    "review_date": "2024-03-20",
+    "rating": 5,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 4,
+        "last_used": "2024-03-18"
+      }
+    ],
+    "tags": "resolved_quickly"
+  },
+  "C0003.2": {
+    "client_id": "C0003",
+    "review_date": "2024-03-20",
+    "rating": 1,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 9,
+        "last_used": "2024-03-10"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 14,
+        "last_used": "2024-03-17"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 10,
+        "last_used": "2024-03-11"
+      }
+    ],
+    "tags": ["long_wait", "resolved_quickly"]
+  },
+  "C0030.1": {
+    "client_id": "C0030",
+    "review_date": "2024-03-20",
+    "rating": 5,
+    "channels": [
+      {
+        "name": "call_center",
+        "interaction_count": 8,
+        "last_used": "2024-03-13"
+      },
+      {
+        "name": "website",
+        "interaction_count": 5,
+        "last_used": "2024-03-15"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 14,
+        "last_used": "2024-03-11"
+      }
+    ],
+    "tags": ["friendly_staff", "resolved_quickly", "poor_service"]
+  },
+  "C0038.1": {
+    "client_id": "C0038",
+    "review_date": "2024-03-20",
+    "rating": 4,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 7,
+        "last_used": "2024-03-10"
+      }
+    ],
+    "tags": ["friendly_staff", "resolved_quickly"]
+  },
+  "C0007.2": {
+    "client_id": "C0007",
+    "review_date": "2024-03-20",
+    "rating": 5,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 12,
+        "last_used": "2024-03-10"
+      },
+      {
+        "name": "website",
+        "interaction_count": 6,
+        "last_used": "2024-03-11"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 1,
+        "last_used": "2024-03-19"
+      }
+    ],
+    "tags": "resolved_quickly"
+  },
+  "C0006.1": {
+    "client_id": "C0006",
+    "review_date": "2024-03-20",
+    "rating": 4,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 13,
+        "last_used": "2024-03-17"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 5,
+        "last_used": "2024-03-13"
+      },
+      {
+        "name": "website",
+        "interaction_count": 5,
+        "last_used": "2024-03-12"
+      }
+    ],
+    "tags": "long_wait"
+  },
+  "C0016.2": {
+    "client_id": "C0016",
+    "review_date": "2024-03-20",
+    "rating": 3,
+    "channels": [
+      {
+        "name": "call_center",
+        "interaction_count": 15,
+        "last_used": "2024-03-12"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 6,
+        "last_used": "2024-03-18"
+      },
+      {
+        "name": "website",
+        "interaction_count": 1,
+        "last_used": "2024-03-16"
+      }
+    ],
+    "tags": "poor_service"
+  },
+  "C0013.2": {
+    "client_id": "C0013",
+    "review_date": "2024-03-20",
+    "rating": 3,
+    "channels": [
+      {
+        "name": "call_center",
+        "interaction_count": 1,
+        "last_used": "2024-03-19"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 7,
+        "last_used": "2024-03-10"
+      },
+      {
+        "name": "website",
+        "interaction_count": 14,
+        "last_used": "2024-03-11"
+      }
+    ],
+    "tags": "long_wait"
+  },
+  "C0036.2": {
+    "client_id": "C0036",
+    "review_date": "2024-03-20",
+    "rating": 5,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 3,
+        "last_used": "2024-03-19"
+      },
+      {
+        "name": "website",
+        "interaction_count": 12,
+        "last_used": "2024-03-15"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 10,
+        "last_used": "2024-03-19"
+      }
+    ],
+    "tags": ["poor_service", "friendly_staff", "fast_response"]
+  },
+  "C0040.2": {
+    "client_id": "C0040",
+    "review_date": "2024-03-20",
+    "rating": 5,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 4,
+        "last_used": "2024-03-17"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 7,
+        "last_used": "2024-03-17"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 15,
+        "last_used": "2024-03-11"
+      }
+    ],
+    "tags": ["friendly_staff", "poor_service", "resolved_quickly"]
+  },
+  "C0019.2": {
+    "client_id": "C0019",
+    "review_date": "2024-03-20",
+    "rating": 5,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 10,
+        "last_used": "2024-03-17"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 8,
+        "last_used": "2024-03-11"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 4,
+        "last_used": "2024-03-19"
+      }
+    ],
+    "tags": ["fast_response", "friendly_staff"]
+  },
+  "C0034.2": {
+    "client_id": "C0034",
+    "review_date": "2024-03-20",
+    "rating": 2,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 13,
+        "last_used": "2024-03-12"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 11,
+        "last_used": "2024-03-16"
+      }
+    ],
+    "tags": "fast_response"
+  },
+  "C0010.2": {
+    "client_id": "C0010",
+    "review_date": "2024-03-20",
+    "rating": 5,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 9,
+        "last_used": "2024-03-12"
+      }
+    ],
+    "tags": ["poor_service", "fast_response", "resolved_quickly"]
+  },
+  "C0014.2": {
+    "client_id": "C0014",
+    "review_date": "2024-03-20",
+    "rating": 3,
+    "channels": [
+      {
+        "name": "call_center",
+        "interaction_count": 3,
+        "last_used": "2024-03-15"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 7,
+        "last_used": "2024-03-14"
+      }
+    ],
+    "tags": "resolved_quickly"
+  },
+  "C0021.1": {
+    "client_id": "C0021",
+    "review_date": "2024-03-20",
+    "rating": 4,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 8,
+        "last_used": "2024-03-10"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 2,
+        "last_used": "2024-03-15"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 10,
+        "last_used": "2024-03-17"
+      }
+    ],
+    "tags": ["resolved_quickly", "fast_response"]
+  },
+  "C0002.1": {
+    "client_id": "C0002",
+    "review_date": "2024-03-20",
+    "rating": 4,
+    "channels": [
+      {
+        "name": "website",
+        "interaction_count": 15,
+        "last_used": "2024-03-17"
+      },
+      {
+        "name": "mobile_app",
+        "interaction_count": 12,
+        "last_used": "2024-03-18"
+      }
+    ],
+    "tags": ["friendly_staff", "long_wait", "fast_response"]
+  },
+  "C0027.2": {
+    "client_id": "C0027",
+    "review_date": "2024-03-20",
+    "rating": 2,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 8,
+        "last_used": "2024-03-17"
+      }
+    ],
+    "tags": ["friendly_staff", "poor_service"]
+  },
+  "C0012.1": {
+    "client_id": "C0012",
+    "review_date": "2024-03-20",
+    "rating": 3,
+    "channels": [
+      {
+        "name": "mobile_app",
+        "interaction_count": 4,
+        "last_used": "2024-03-18"
+      },
+      {
+        "name": "website",
+        "interaction_count": 15,
+        "last_used": "2024-03-11"
+      },
+      {
+        "name": "call_center",
+        "interaction_count": 10,
+        "last_used": "2024-03-14"
+      }
+    ],
+    "tags": ["long_wait", "resolved_quickly"]
+  }
+}
