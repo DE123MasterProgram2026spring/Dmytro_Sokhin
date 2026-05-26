@@ -1,0 +1,193 @@
+---
+title: "Лабораторна робота №6: Ефективна робота з великими даними за допомогою пакета data.table"
+subtitle: "Інженерія даних | КрНУ ім. М. Остроградського"
+author: "Сохін Дмитро KI-25-1м"
+date: last-modified
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    toc-location: left
+    sidebar: left
+    collapse-level: 2
+    code-fold: false
+    code-overflow: wrap
+    page-layout: full
+    include-in-footer:
+      text: |
+        <hr>
+        <footer style="text-align: center; font-size: 0.9em; color: #666;">
+          <p>Виконав: <strong>Сохін Дмитро</strong> | Група: <strong>KI-25-1м</strong> | Викладач: Сидоренко В.М.</p>
+          <p>Кременчуцький національний університет імені Михайла Остроградського &copy; 2025</p>
+        </footer>
+editor: visual
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+# Мета роботи
+
+Освоїти сучасний інструмент для роботи з великими обсягами даних у R — пакет `data.table`. Навчитися виконувати швидкі, пам’ять-ефективні операції над сотнями тисяч і мільйонами рядків: фільтрацію, агрегацію, оновлення (by reference) та злиття таблиць за допомогою унікального синтаксису `DT[i, j, by]`.
+
+# Вступ
+
+У світі інженерії даних часто доводиться працювати з обсягами інформації, які перевантажують оперативну пам’ять. У таких умовах стандартні пакети стають ресурсоємними. `data.table` пропонує оптимізовану C-реалізацію, що дозволяє обробляти дані в десятки разів швидше, мінімізуючи створення проміжних копій у пам'яті.
+
+У даній роботі реалізується високоефективний аналіз логістичної мережі за 2024 рік. Всі операції виконуються виключно синтаксисом `data.table`.
+
+# Робоче завдання
+
+## Варіант 3
+
+### Тема: Аналіз логістичних даних за 2024 рік
+
+Отримано два масиви даних:
+- `logistics_2024.csv` — дані про 600 000+ доставок.
+- `warehouses.csv` — довідник логістичних складів.
+
+Необхідно провести повний аналіз ефективності логістичної мережі, оцінити швидкість доставки та виявити найменш ефективні вузли, використовуючи виключно інструментарій `data.table`.
+
+```{r}
+library(data.table)
+library(ggplot2)
+
+dir.create("data", showWarnings = FALSE)
+
+set.seed(42)
+wh_data <- data.table(
+  warehouse_id = paste0("WH", sprintf("%02d", 1:15)),
+  city = sample(c("Київ", "Львів", "Одеса", "Дніпро", "Харків"), 15, replace = TRUE),
+  warehouse_type = sample(c("automated", "semi-automated", "manual"), 15, replace = TRUE),
+  capacity_pallets = sample(5000:20000, 15, replace = TRUE)
+)
+fwrite(wh_data, "data/warehouses.csv")
+
+n_rows <- 600000
+dispatch_dates <- as.IDate("2024-01-01") + sample(0:364, n_rows, replace = TRUE)
+
+warehouse_penalties <- sample(0:3, 15, replace = TRUE)
+names(warehouse_penalties) <- wh_data$warehouse_id
+
+base_delays <- sample(-1:10, n_rows, replace = TRUE, 
+                      prob = c(0.01, 0.15, 0.3, 0.25, 0.15, 0.08, 0.03, 0.01, 0.01, 0.005, 0.003, 0.002))
+
+assigned_warehouses <- sample(wh_data$warehouse_id, n_rows, replace = TRUE)
+
+logistics_data <- data.table(
+  delivery_id = 100000 + 1:n_rows,
+  warehouse_id = assigned_warehouses,
+  customer_id = paste0("CUST-", sample(1000:9999, n_rows, replace = TRUE)),
+  dispatch_date = dispatch_dates,
+  delivery_date = dispatch_dates + base_delays + warehouse_penalties[assigned_warehouses],
+  distance_km = sample(50:1500, n_rows, replace = TRUE)
+)
+fwrite(logistics_data, "data/logistics_2024.csv")
+
+cat("Дані успішно згенеровані та записані на диск.\n")
+
+
+cat("\n\n Етап 1. Швидке завантаження даних (fread) \n\n")
+
+t_load <- system.time({
+  logistics <- fread("data/logistics_2024.csv")
+  warehouses <- fread("data/warehouses.csv")
+})
+
+cat("Час завантаження >600k рядків (секунд):\n")
+print(t_load["elapsed"])
+
+cat("\nПеревірка класів об'єктів:\n")
+class(logistics)
+
+
+cat("\n\n Етап 2. Підготовка даних (Update by reference) \n\n")
+
+logistics[, delivery_time := as.integer(as.IDate(delivery_date) - as.IDate(dispatch_date))]
+
+logistics[delivery_time < 0, delivery_time := NA_integer_]
+
+logistics[, c("customer_id") := NULL]
+
+cat("Структура логістичних даних після підготовки:\n")
+str(logistics)
+
+
+cat("\n\n Етап 3. Агрегація за складами \n\n")
+
+merged_dt <- logistics[warehouses, on = "warehouse_id", nomatch = 0]
+
+wh_performance <- merged_dt[, .(
+  mean_delivery_time = mean(delivery_time, na.rm = TRUE),
+  total_deliveries = .N,
+  late_delivery_prop = mean(delivery_time > 5, na.rm = TRUE)
+), by = warehouse_id]
+
+wh_performance <- wh_performance[order(-mean_delivery_time)]
+
+cat("Показники ефективності складів:\n")
+print(head(wh_performance))
+
+
+cat("\n\n Етап 4. Аналіз за місяцями та типами складів (.SD) \n\n")
+
+merged_dt[, month := format(as.IDate(dispatch_date), "%Y-%m")]
+
+monthly_analysis <- merged_dt[, lapply(.SD, length), by = .(warehouse_type, month), .SDcols = "delivery_id"]
+
+setnames(monthly_analysis, "delivery_id", "deliveries_count")
+monthly_analysis <- monthly_analysis[order(month, warehouse_type)]
+
+cat("Місячна активність за типами складів (перші 10 записів):\n")
+print(head(monthly_analysis, 10))
+
+
+cat("\n\n Етап 5. Топ найменш ефективних складів \n\n")
+
+bad_warehouses <- wh_performance[mean_delivery_time > 4 & total_deliveries >= 1000]
+
+worst_hubs <- bad_warehouses[warehouses, on = "warehouse_id", nomatch = NULL][
+  , .(warehouse_id, city, warehouse_type, mean_delivery_time, total_deliveries)
+]
+
+worst_hubs <- head(worst_hubs[order(-mean_delivery_time)], 10)
+
+cat("Найменш ефективні вузли логістики:\n")
+print(worst_hubs)
+
+
+cat("\n\n Етап 6. Візуалізація результатів \n\n")
+
+wh_performance_df <- setDF(copy(wh_performance))
+
+p <- ggplot(wh_performance_df, aes(x = reorder(warehouse_id, mean_delivery_time), y = mean_delivery_time)) +
+  geom_bar(stat = "identity", fill = "steelblue", color = "black") +
+  coord_flip() +
+  labs(
+    title = "Середній час доставки за складами",
+    subtitle = "Аналіз логістичної мережі 2024",
+    x = "Ідентифікатор складу",
+    y = "Середній час (дні)"
+  ) +
+  theme_minimal()
+
+print(p)
+```
+
+# Висновок
+
+У ході лабораторної роботи було успішно застосовано пакет `data.table` для високоефективної обробки понад 600 тисяч записів. Завдяки оптимізованому синтаксису `DT[i, j, by]` та концепції оновлення на місці (`by reference` через оператор `:=`), вдалося уникнути значних витрат оперативної пам'яті.
+
+Було реалізовано:
+
+- надшвидке завантаження великих файлів за допомогою `fread()`;
+
+- ефективне злиття багатотисячних таблиць через аргумент `on`;
+
+- складну агрегацію з використанням спеціального символу `.SD` та `.SDcols`;
+
+- сортування та фільтрацію без створення проміжних копій.
+
+Пакет `data.table` довів свою абсолютну перевагу у швидкості виконання операцій, що робить його незамінним інструментом для задач інженерії великих даних.

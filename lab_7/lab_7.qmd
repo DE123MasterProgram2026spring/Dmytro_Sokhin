@@ -1,0 +1,138 @@
+---
+title: "Лабораторна робота №7: Основи роботи з Apache Spark у середовищі R (через sparklyr)"
+subtitle: "Інженерія даних | КрНУ ім. М. Остроградського"
+author: "Сохін Дмитро KI-25-1м"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    theme: cosmo
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+# Мета роботи
+
+Навчитися налаштовувати локальний кластер Apache Spark та виконувати базові операції з великими даними за допомогою R-інтерфейсу `sparklyr`. Освоїти основні етапи роботи зі Spark: підключення, завантаження даних, аналіз через `dplyr`-синтаксис, моніторинг через веб-інтерфейс та коректне від’єднання.
+
+# Вступ
+
+У сучасній інженерії даних часто виникають завдання, які виходять за межі можливостей однієї машини. Для обробки масивів Big Data використовується розподілена обчислювальна система Apache Spark. 
+У цій лабораторній роботі ми застосовуємо пакет `sparklyr`, який дозволяє керувати локальним кластером Spark і виконувати складні обчислення на мільйонах рядків, використовуючи звичний синтаксис `dplyr` без необхідності завантажувати весь масив даних в оперативну пам'ять R.
+
+# Робоче завдання
+
+## Варіант 3
+
+### Тема: Аналіз логістичних даних з використанням Apache Spark
+
+Було отримано масив даних логістичної компанії за 2024 рік (`logistics_2024.csv`, понад 600 000 рядків). Необхідно провести аналіз ефективності логістичної мережі у розподіленому середовищі Apache Spark, використовуючи лише R-інтерфейс `sparklyr`.
+
+```{r setup_data}
+library(sparklyr)
+library(dplyr)
+library(data.table)
+
+Sys.setenv(JAVA_HOME = "C:/Program Files/Eclipse Adoptium/jdk-8.0.492.9-hotspot")
+
+dir.create("data", showWarnings = FALSE)
+
+if (!file.exists("data/logistics_2024.csv")) {
+  cat("Генерація файлу logistics_2024.csv (600 000+ рядків)...\n")
+  set.seed(123)
+  n_rows <- 650000
+  dispatch_dates <- as.Date("2024-01-01") + sample(0:300, n_rows, replace = TRUE)
+  delivery_delays <- sample(1:15, n_rows, replace = TRUE)
+  
+  logistics_data <- data.table(
+    delivery_id = 100000 + 1:n_rows,
+    warehouse_id = paste0("WH", sprintf("%02d", sample(1:20, n_rows, replace = TRUE))),
+    customer_id = paste0("CUST-", sample(1000:9999, n_rows, replace = TRUE)),
+    dispatch_date = dispatch_dates,
+    delivery_date = dispatch_dates + delivery_delays,
+    distance_km = sample(50:1500, n_rows, replace = TRUE)
+  )
+  fwrite(logistics_data, "data/logistics_2024.csv")
+}
+```
+
+# Етап 1: Встановлення та підключення
+
+Підключаємося до локального кластера Spark. Якщо Spark ще не встановлено, необхідно виконати функцію spark_install().
+
+```{r}
+# spark_install(version = "3.3.2")
+
+sc <- spark_connect(master = "local")
+
+cat("Успішно підключено до Apache Spark версії:", as.character(spark_version(sc)), "\n")
+```
+# Етап 2: Завантаження даних
+
+Оскільки файл великий, ми використовуємо spark_read_csv(), що дозволяє Spark напряму прочитати файл із диска у свій розподілений формат, минаючи оперативну пам'ять локальної сесії R.
+
+```{r}
+logistics_tbl <- spark_read_csv(sc, name = "logistics", path = "data/logistics_2024.csv")
+
+total_rows <- logistics_tbl %>% count() %>% pull()
+cat("Завантажено рядків у Spark:", total_rows, "\n\n")
+
+glimpse(logistics_tbl)
+```
+
+# Етап 3: Аналіз через dplyr-інтерфейс
+
+Усі наведені нижче операції відбуваються безпосередньо у кластері `Spark` (Lazy Evaluation). Дані ще не завантажуються в R.
+Для обчислення різниці між датами використовується Spark SQL функція `datediff()`.
+
+```{r}
+delayed_deliveries_plan <- logistics_tbl %>%
+  mutate(delivery_time = datediff(delivery_date, dispatch_date)) %>%
+  filter(delivery_time > 5) %>%
+  group_by(warehouse_id) %>%
+  summarise(avg_delivery_time = mean(delivery_time, na.rm = TRUE)) %>%
+  arrange(desc(avg_delivery_time)) %>%
+  head(5)
+
+dbplyr::sql_render(delayed_deliveries_plan)
+```
+# Етап 4: Отримання результатів у `R`
+
+Використовуємо функцію `collect()`, щоб змусити Spark виконати всі заплановані обчислення і повернути компактний фінальний результат у нашу R-сесію як звичайний `data.frame`.
+
+```{r}
+
+top_delayed_warehouses <- delayed_deliveries_plan %>% collect()
+
+cat("\nТоп-5 складів з найдовшим середнім часом доставки (> 5 днів):\n")
+print(top_delayed_warehouses)
+
+class(top_delayed_warehouses)
+
+```
+# Етап 5: Моніторинг через веб-інтерфейс
+
+В `Apache Spark` інтегрований потужний веб-інтерфейс для профілювання пам'яті (`Executors`) та моніторингу задач (`Jobs`). Його можна відкрити у браузері командою `spark_web(sc)`.
+
+```{r}
+# spark_web(sc)
+
+cat("URL для моніторингу Spark кластера:", spark_web(sc), "\n")
+```
+# Етап 6: Від’єднання
+
+Правильне від'єднання від кластера — критичний етап інженерії даних. Воно вивільняє ресурси `JVM` та системну пам'ять (Storage).
+
+```{r}
+spark_disconnect(sc)
+
+cat("Успішно від'єднано від кластера Spark.\n")
+```
+# Висновок
+
+У лабораторній роботі було освоєно базові принципи роботи з системою розподілених обчислень `Apache Spark`. За допомогою R-пакета `sparklyr` було успішно розгорнуто локальний кластер, завантажено масив даних на понад 600 тисяч рядків та виконано його швидкий агрегований аналіз.
+
+Було продемонстровано головну перевагу `sparklyr` — здатність трансляції знайомих команд `dplyr` у високоефективні оптимізовані запити `Spark SQL`, що дозволяє інженеру даних працювати з `Big Data`, не залишаючи звичного середовища розробки `R`, і використовуючи функцію `collect()` лише для отримання фінальних метрик.
