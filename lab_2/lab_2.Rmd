@@ -1,0 +1,191 @@
+---
+title: "Лабораторна робота №2: Інтеграція та об’єднання даних з різних джерел"
+subtitle: "Інженерія даних | КрНУ ім. М. Остроградського"
+author: "Сохін Дмитро KI-25-1м"
+date: last-modified
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    toc-location: left
+    sidebar: left
+    collapse-level: 2
+    code-fold: true
+    code-overflow: wrap
+    page-layout: full
+    include-in-footer:
+      text: |
+        <hr>
+        <footer style="text-align: center; font-size: 0.9em; color: #666;">
+          <p>Виконав: <strong>Сохін Дмитро</strong> | Група: <strong>KI-25-1м</strong> | Викладач: Сидоренко В.М.</p>
+          <p>Кременчуцький національний університет імені Михайла Остроградського &copy; 2025</p>
+        </footer>
+editor: visual
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+### Мета роботи
+
+Освоїти повний цикл інтеграції реляційних даних у середовищі R: від завантаження даних з різноманітних джерел (CSV, Excel, Google Таблиці) до їх об’єднання за допомогою вертикальних (`bind_rows`) та горизонтальних (`left_join`, `semi_join`, `anti_join`) операцій. Навчитися будувати реалістичні ETL-конвеєри, які моделюють типові задачі інженера даних у production-середовищі.
+
+---
+
+### Хід роботи
+
+
+```{r message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
+#| label: setup
+#| message: false
+#| warning: false
+
+Sys.setlocale("LC_ALL", "en_US.UTF-8")
+
+library(dplyr)
+library(vroom)
+library(readxl)
+library(writexl)
+library(tibble)
+```
+
+#### 0. Генерація даних
+
+Створимо синтетичні датасети у папці `data/`.
+
+```{r}
+# Завантажуємо потрібні бібліотеки для генерації
+library(tibble)
+library(writexl)
+
+# 1. Створюємо ідеальні CSV для Google Analytics
+ga_nov_data <- tibble(
+  date = as.Date("2023-11-01") + 0:4,
+  page = c("/home", "/about", "/blog/r-tips", "/blog/python-tips", "/promo"),
+  sessions = c(150, 45, 320, 210, 80),
+  users = c(120, 40, 300, 190, 70),
+  bounce_rate = c(0.45, 0.60, 0.25, 0.30, 0.80),
+  avg_session_duration = c(120, 45, 300, 250, 30)
+)
+
+ga_dec_data <- tibble(
+  date = as.Date("2023-12-01") + 0:4,
+  page = c("/home", "/about", "/blog/r-tips", "/blog/python-tips", "/promo"),
+  sessions = c(200, 50, 400, 250, 500),
+  users = c(180, 45, 380, 230, 450),
+  bounce_rate = c(0.40, 0.55, 0.20, 0.28, 0.40),
+  avg_session_duration = c(150, 50, 350, 280, 90)
+)
+
+# Записуємо їх у файли з табуляцією (як у твоїх вихідних)
+write.table(ga_nov_data, "ga_nowember.csv", sep = "\t", row.names = FALSE, quote = FALSE)
+write.table(ga_dec_data, "ga_december.csv", sep = "\t", row.names = FALSE, quote = FALSE)
+
+# 2. Створюємо контент-план
+pages_data <- tibble(
+  page_url = c("/home", "/about", "/blog/r-tips", "/blog/python-tips", "/promo"),
+  page_title = c("Головна", "Про нас", "Поради по R", "Поради по Python", "Акція"),
+  category = c("Main", "Info", "Blog", "Blog", "Marketing"),
+  author = c("Admin", "Admin", "Dmitry", "Dmitry", "Marketer")
+)
+
+camp_nov <- tibble(
+  page_url = c("/home", "/blog/r-tips", "/promo"),
+  campaign = c("Brand", "Edu", "BlackFriday"),
+  channel = c("Search", "Social", "Email")
+)
+
+camp_dec <- tibble(
+  page_url = c("/home", "/promo", "/blog/python-tips"),
+  campaign = c("Brand", "NewYear", "Edu"),
+  channel = c("Search", "Social", "Social")
+)
+
+write_xlsx(list(pages = pages_data, campaigns_nov = camp_nov, campaigns_dec = camp_dec), "data/content_plan.xlsx")
+
+print("Файл content_plan.xlsx успішно згенеровано!")
+```
+
+1. Завантаження даних
+Завантажити обидва `CSV`-файли за допомогою `vroom` та прочитати всі необхідні аркуші з `Excel`-файлу `content_plan.xlsx` за допомогою `readxl`.
+
+
+```{r}
+# Завантаження CSV (вказуємо розділювач табуляцію \t)
+ga_nov <- vroom("data/ga_nowember.csv", delim = "\t")
+ga_dec <- vroom("data/ga_december.csv", delim = "\t")
+
+# Завантаження Excel
+pages <- read_excel("data/content_plan.xlsx", sheet = "pages")
+c_nov <- read_excel("data/content_plan.xlsx", sheet = "campaigns_nov")
+c_dec <- read_excel("data/content_plan.xlsx", sheet = "campaigns_dec")
+
+# Вертикальне об'єднання місяців
+ga_full <- bind_rows(
+  ga_nov %>% mutate(month = "2023-11"),
+  ga_dec %>% mutate(month = "2023-12")
+)
+```
+
+2. Вертикальне об’єднання
+Об’єднати дані за листопад і грудень у єдину таблицю ga_full, додавши стовпець month з відповідними значеннями 2023-11 та 2023-12.
+
+```{r}
+ga_full <- bind_rows(
+  ga_nov |> mutate(month = "2023-11"),
+  ga_dec |> mutate(month = "2023-12")
+)
+```
+
+3. Горизонтальне об’єднання
+Додати до загальної таблиці інформацію про сторінки. Окремо об'єднати маркетингові кампанії у таблицю all_campaigns (додавши місяць) і приєднати ці дані до ga_full.
+
+```{r}
+# Об'єднуємо кампанії вертикально
+all_campaigns <- bind_rows(
+  campaigns_nov |> mutate(month = "2023-11"),
+  campaigns_dec |> mutate(month = "2023-12")
+)
+
+# Приєднуємо дані про сторінки та кампанії до основного датасету
+ga_full <- ga_full |>
+  left_join(pages, by = c("page" = "page_url")) |>
+  left_join(all_campaigns, by = c("page" = "page_url", "month" = "month"))
+```
+
+
+4. Агрегація та аналіз
+Розрахувати для кожної категорії сторінок і місяця загальну кількість сесій, середній час сесії та середній bounce rate. Окремо визначити топ-5 сторінок за кількістю користувачів у кожному місяці.
+
+```{r}
+# 4.1 Статистика за категоріями
+ga_full |>
+  group_by(category, month) |>
+  summarise(
+    total_sessions = sum(sessions, na.rm = TRUE),
+    mean_duration = mean(avg_session_duration, na.rm = TRUE),
+    mean_bounce_rate = mean(bounce_rate, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+# 4.2 Топ-5 сторінок за користувачами
+ga_full |>
+  group_by(month) |>
+  slice_max(order_by = users, n = 5) |>
+  ungroup()
+```
+
+5. Фільтруюче з’єднання
+Визначити сторінки, які мали кампанію в обох місяцях (semi_join), та ті, які були в кампаніях у листопаді, але не потрапили в грудневі (anti_join). Для цього працюємо з таблицями campaigns_nov та campaigns_dec.
+
+```{r}
+# Сторінки в кампаніях обох місяців
+campaigns_nov |>
+  semi_join(campaigns_dec, by = "page_url")
+
+# Сторінки з кампаніями ТІЛЬКИ в листопаді
+campaigns_nov |>
+  anti_join(campaigns_dec, by = "page_url")
+```

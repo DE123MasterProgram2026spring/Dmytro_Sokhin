@@ -1,0 +1,6 @@
+date	page	sessions	users	bounce_rate	avg_session_duration
+2023-12-01	/home	200	180	0.4	150
+2023-12-02	/about	50	45	0.55	50
+2023-12-03	/blog/r-tips	400	380	0.2	350
+2023-12-04	/blog/python-tips	250	230	0.28	280
+2023-12-05	/promo	500	450	0.4	90
